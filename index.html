@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Books with ES6</title>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+<body id="body">
+    <header>
+        <nav>
+            <p>Awesome Books</p>
+            <ul class="menu">
+                <li id="list"><a href="#home-page">List</a></li>
+                <li id="add-new"><a href="#add-page">Add new</a></li>
+                <li id="contact"><a href="#contact-page">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="date-time"></div>
+    </header>
+
+    <section id="home-page">
+        <div class="home">
+            <h1>All awesome books</h1>
+            <div id="books-list" class="books-list"></div>
+        </div>
+    </section>
+
+    <section id="add-page">
+        <div class="form-container" id="add-book">
+            <h3>Add a new book</h3>
+            <form id="form">
+                <input type="text" id="title" placeholder="Title" required />
+                <input type="text" id="author" placeholder="Author" required />
+                <button type="submit" id="add">Add</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact-page">
+        <div class="contact-container">
+            <h1>Contact information</h1>
+            <p>Do you have any questions or you just want to say "Hello" ?</p>
+            <p class="text">You can teach out to us!</p>
+            <ul class="contact-info">
+                <li>Our e-mail: mail@mail.com</li>
+                <li>Our phone number: +212 000 00 00 00</li>
+                <li>Our address: Street name 22, 84 500 City, Contry</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright ©Oumaima NJ</p>
+    </footer>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
