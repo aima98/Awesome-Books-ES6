@@ -37,4 +37,4 @@ export default class Books {
       bookList.appendChild(bookDiv);
     });
   }
-} 
+}
