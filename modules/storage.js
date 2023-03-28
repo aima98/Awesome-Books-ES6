@@ -15,14 +15,14 @@ export default class Storage {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook(title) {
-    const books = Storage.getFromStorage();
+  // static removeBook(index) {
+  //   const books = Storage.getFromStorage();
 
-    books.forEach((book, index) => {
-      if (book.title === title) {
-        books.splice(index, 1);
-      }
-    });
-    localStorage.setItem('books', JSON.stringify(books));
-  }
+  //   books.forEach((book, index) => {
+  //     if (book.title === title) {
+  //       books.splice(index, 1);
+  //     }
+  //   });
+  //   localStorage.setItem('books', JSON.stringify(books));
+  // }
 }

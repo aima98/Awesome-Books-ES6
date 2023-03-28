@@ -1,35 +1,41 @@
-import Storage from './storage.js';
-
 export default class Books {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
+  constructor() {
+    this.books = JSON.parse(localStorage.getItem('books')) || [];
+  
+    this.addBook = () => {
+      const title = document.getElementById('title').value;
+      const author = document.getElementById('author').value;
+      if (title && author) {
+        this.books.push({ title, author });
+        localStorage.setItem('books', JSON.stringify(this.books));
+        this.displayBooks();
+        document.getElementById('title').value = '';
+        document.getElementById('author').value = '';
+      }
+    };
+  
+    this.removeBook = (index) => {
+      this.books.splice(index, 1);
+      localStorage.setItem('books', JSON.stringify(this.books));
+      this.displayBooks();
+    };
   }
-
-  static addBookToList(book) {
-    const list = document.querySelector('#books-list');
-
-    const bookDiv = document.createElement('div');
-    bookDiv.classList.add('book-div');
-    bookDiv.innerHTML = `<p class="author-name">"${book.title}" by ${book.author}</p>
-      <button class="rmv-btn" id="data-id">Remove</button>
-    `;
-    list.appendChild(bookDiv);
-  }
-
-  static deleteBook(element) {
-    if (element.classList.contains('rmv-btn')) {
-      element.parentElement.remove();
-    }
-  }
-
-  static clearFields() {
-    document.querySelector('#title').value = '';
-    document.querySelector('#author').value = '';
-  }
-
-  static displayBooks() {
-    const books = Storage.getFromStorage();
-    books.forEach((book) => Books.addBookToList(book));
+  
+  displayBooks() {
+    const bookList = document.getElementById('books-list');
+    bookList.innerHTML = '';
+    this.books.forEach((book, index) => {
+      const bookDiv = document.createElement('div');
+      const p = document.createElement('p');
+      const removeButton = document.createElement('button');
+      bookDiv.classList.add('book-div');
+      p.textContent = `${book.title} by ${book.author}`;
+      removeButton.textContent = 'Remove';
+      removeButton.addEventListener('click', () => this.removeBook(index));
+      bookDiv.appendChild(p);
+      bookDiv.appendChild(removeButton);
+      bookList.appendChild(bookDiv);
+    });
   }
 }
+  

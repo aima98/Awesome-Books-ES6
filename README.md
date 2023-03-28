@@ -25,9 +25,6 @@
 
 # 📖 [Awesome_Books_ES6] <a name="about-project"></a>
 
-> This capstone project was built for Microverse [under these guidance objectives](https://github.com/microverseinc/curriculum-javascript/blob/main/books/books_with_es6.md) > _note: you can only access this link if you're a Micronault (Microverse Student)_
-
-
 **[Awesome_Books_ES6]** is a project that contains a single-page web application that keeps track of books. Book details captured are the book title, author, and ISBN. Users can add a book, view a list of books, and also remove any un wanted books.
 
 
