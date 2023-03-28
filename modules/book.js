@@ -1,7 +1,7 @@
 export default class Books {
   constructor() {
     this.books = JSON.parse(localStorage.getItem('books')) || [];
-  
+
     this.addBook = () => {
       const title = document.getElementById('title').value;
       const author = document.getElementById('author').value;
@@ -13,14 +13,14 @@ export default class Books {
         document.getElementById('author').value = '';
       }
     };
-  
+
     this.removeBook = (index) => {
       this.books.splice(index, 1);
       localStorage.setItem('books', JSON.stringify(this.books));
       this.displayBooks();
     };
   }
-  
+
   displayBooks() {
     const bookList = document.getElementById('books-list');
     bookList.innerHTML = '';
@@ -37,5 +37,4 @@ export default class Books {
       bookList.appendChild(bookDiv);
     });
   }
-}
-  
+} 
